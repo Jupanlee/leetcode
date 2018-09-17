@@ -8,19 +8,15 @@ public:
         quick_sort(str_nums, 0, size-1);
         
         string rst = ""; int i = 0;
-        while ( i < ( size - 1 ) && str_nums[i] == "0" ) {
-            ++i;
-        }
+        while ( i < ( size - 1 ) && str_nums[i] == "0" ) ++i;
         
-        for ( int j = i; j < size; ++j ) {
-            rst += str_nums[j];
-        }       
+        for ( int j = i; j < size; ++j ) rst += str_nums[j];
+      
         
         return rst;    
     }
     
     void quick_sort(vector<string> &str_nums, int lo, int hi) {
-        
         if ( hi <= lo ) return;
         int t = partition(str_nums, lo, hi);
         
